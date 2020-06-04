@@ -4,7 +4,7 @@ const option_chain = require('./nse_lib');
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.once('ready',() => {
+app.use('ready',() => {
 	console.log('Ready!');
 	var CronJob = require('cron').CronJob;
 	var remind = new CronJob('0 0,30 * * * *', function() {
