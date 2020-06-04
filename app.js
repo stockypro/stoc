@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static('public'))
 
-cron.schedule('0 0,20 * * * *', function() {
+app.cron.schedule('0 0,20 * * * *', function() {
 	console.log("schedule is running...");
 });
 
