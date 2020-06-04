@@ -8,9 +8,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static('public'))
 
-app.cron.schedule('0 0,20 * * * *', function() {
-	console.log("schedule is running...");
-});
+
 
 app.get('/', (req, res) => res.redirect('/index.html'));
 app.get('/chain', async (req, res) => {
