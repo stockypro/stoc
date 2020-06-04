@@ -2,13 +2,18 @@ const express = require('express');
 const fs = require('fs');
 const option_chain = require('./nse_lib');
 const app = express();
-const cron = require('node-cron');
-
 const port = process.env.PORT || 8080;
 
+app.once('ready',() => {
+	console.log('Ready!');
+	var CronJob = require('cron').CronJob;
+	var remind = new CronJob('0 0,30 * * * *', function() {
+		 console.log('check to see if dyno is running');
+		 }); 
+		 remind.start();
+});
 
 app.use(express.static('public'))
-
 
 app.get('/', (req, res) => res.redirect('/index.html'));
 app.get('/chain', async (req, res) => {
