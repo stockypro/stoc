@@ -7,7 +7,7 @@ const port = process.env.PORT || 8080;
 app.once('ready',() => {
 	console.log('Ready!');
 	var CronJob = require('cron').CronJob;
-	var remind = new CronJob('0 0,30 * * * *', function() {
+	var remind = new CronJob('0 0,15 * * * *', function() {
 		 console.log('check to see if dyno is running');
 		 }); 
 		 remind.start();
