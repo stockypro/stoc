@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const option_chain = require('./nse_lib');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 app.once('ready',() => {
 	console.log('Ready!');
